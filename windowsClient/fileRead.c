@@ -2,11 +2,17 @@
 
 int main()
 {
-    char fileName[] = "D:\\CodeWork_main\\item\\FeemCopy\\testTxt\\apple.txt";
-    FILE* fp = fopen(fileName,"r");
-    char buf[1024];
-    fputs(buf,1024,fp);
-    printf("%s",buf);
+    	char fileName[] = "./../testTxt/apple.txt";
+	printf("file path :%s\n",fileName);
+    	FILE* fp = fopen(fileName,"r");
+	if(fp == NULL)
+	{
+		printf("file read error!\n");
+		return -1;
+	}
+    	char buf[1024];
+    	fgets(buf,1024,fp);
+    	printf("%s",buf);
 
-    return 0;
+    	return 0;
 }
